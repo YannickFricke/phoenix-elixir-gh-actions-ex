@@ -1,0 +1,21 @@
+version: "3"
+services:
+    application:
+        image: yfricke/phx-example:latest
+        container_name: phx-example
+        restart: always
+        environment:
+            SECRET_KEY_BASE: "${SECRET_KEY_BASE}"
+        volumes:
+            - ./assets/:/app/assets/
+            - ./config/:/app/config/
+            - ./lib/:/app/lib/
+            - ./priv/gettext/:/app/priv/gettext/
+            - ./test/:/app/test/
+            - ./.formatter.exs:/app/.formatter.exs
+            - ./mix.exs:/app/mix.exs
+            - ./mix.lock:/app/mix.lock
+        build:
+            context: .
+        ports:
+            - "4000:4000"
