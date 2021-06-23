@@ -16,5 +16,3 @@ jobs:
           heroku_app_name: "phoenix-elixir-gh-actions-ex" #Must be unique in Heroku
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           usedocker: true
-        env:
-          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
